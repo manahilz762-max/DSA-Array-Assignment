@@ -1,0 +1,67 @@
+import java.util.Scanner; // Import scanner for input
+
+public class Task10 { // Class name Task10
+    public static void main(String[] args) { // Main method
+        Scanner sc = new Scanner(System.in); // Create scanner object
+
+        // Take size of first array
+        System.out.print("Enter size of first array: ");
+        int n1 = sc.nextInt(); // Size of first array
+        int[] arr1 = new int[n1]; // Declare first array
+
+        System.out.println("Enter " + n1 + " elements in ascending order for first array:");
+        for (int i = 0; i < n1; i++) { // Loop for first array input
+            arr1[i] = sc.nextInt(); // Store element
+        }
+
+        // Take size of second array
+        System.out.print("Enter size of second array: ");
+        int n2 = sc.nextInt(); // Size of second array
+        int[] arr2 = new int[n2]; // Declare second array
+
+        System.out.println("Enter " + n2 + " elements in ascending order for second array:");
+        for (int i = 0; i < n2; i++) { // Loop for second array input
+            arr2[i] = sc.nextInt(); // Store element
+        }
+
+        // Merge both arrays into third array
+        int[] merged = new int[n1 + n2]; // Third array size is sum of both
+        int k = 0; // Index for merged array
+
+        // Copy first array into merged
+        for (int i = 0; i < n1; i++) { // Traverse first array
+            merged[k] = arr1[i]; // Copy element
+            k++; // Move to next position
+        }
+
+        // Copy second array into merged
+        for (int i = 0; i < n2; i++) { // Traverse second array
+            merged[k] = arr2[i]; // Copy element
+            k++; // Move to next position
+        }
+
+        // Display merged array
+        System.out.print("Merged Array: ");
+        for (int i = 0; i < merged.length; i++) { // Loop through merged
+            System.out.print(merged[i] + " "); // Print element
+        }
+
+        // Find largest element in merged array
+        int largest = merged[0]; // Assume first is largest
+        for (int i = 1; i < merged.length; i++) { // Check all elements
+            if (merged[i] > largest) { // If current is greater
+                largest = merged[i]; // Update largest
+            }
+        }
+
+        System.out.println("\nLargest element in merged array: " + largest); // Print largest
+
+        sc.close(); // Close scanner
+    }
+}
+
+// Time Complexity Explanation for hardcopy:
+// 1. Copying first array: O(n1)
+// 2. Copying second array: O(n2)
+// 3. Finding largest: O(n1 + n2)
+// Total: O(n1 + n2) = O(n) linear time

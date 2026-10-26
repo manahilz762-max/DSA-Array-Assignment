@@ -1,0 +1,21 @@
+import java.util.Scanner; // Scanner to take user input
+public class Task01 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in); // Create scanner object
+        int[] arr = new int[10]; // Declare array of 10 integers
+        System.out.println("Enter 10 integers:"); // Ask user
+        for (int i = 0; i < arr.length; i++) { // Loop 0 to 9
+            arr[i] = sc.nextInt(); // Take input at index i
+        }
+        System.out.print("Array elements: "); // Display original
+        for (int i = 0; i < arr.length; i++) { // Traverse forward
+            System.out.print(arr[i] + " "); // Print element
+        }
+        System.out.print("\nReverse order: "); // Display reverse
+        for (int i = arr.length - 1; i >= 0; i--) { // Traverse backward
+            System.out.print(arr[i] + " "); // Print reverse
+        }
+        sc.close(); // Close scanner
+    }
+}
+// Time Complexity: O(n) for input + O(n) for display = O(n)
